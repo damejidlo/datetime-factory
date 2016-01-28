@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 5.6
+
+install:
+  - composer self-update || echo "failed :("
+  - time composer install --no-interaction --optimize-autoloader
+
+before_script:
+  - ./vendor/bin/tester --info
+
+script:
+  - ./vendor/bin/tester -s -j 32 ./tests
+
+after_failure:
+  - 'for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done'
+
+notifications:
+  email: false
