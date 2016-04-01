@@ -3,18 +3,11 @@ language: php
 php:
   - 5.6
 
-install:
-  - composer self-update || echo "failed :("
-  - time composer install --no-interaction --optimize-autoloader
-
 before_script:
-  - ./vendor/bin/tester --info
+  - composer self-update || echo "[ERROR] update-composer failed!"
+  - composer install --no-interaction --optimize-autoloader
 
 script:
-  - ./vendor/bin/tester -s -j 32 ./tests
-
-after_failure:
-  - 'for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done'
-
-notifications:
-  email: false
+  - ./vendor/bin/tester -s -j 32 -c ./tests/php.ini ./tests --coverage coverage.xml --coverage-src src
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.xml
