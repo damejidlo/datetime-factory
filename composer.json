@@ -1,5 +1,6 @@
 {
 	"name": "damejidlo/datetime-factory",
+	"license": "MIT",
 	"description": "",
 	"type": "library",
 	"require": {
