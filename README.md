@@ -15,6 +15,8 @@ This ultra-simple library provides service you can easily use and mock.
 composer install damejidlo/datetime-factory
 ```
 
+And then just register it in your `config.neon` as a service.
+
 # Example (of mocking in tests)
 ```php
 trait MockDateTimeFactoryTrait
