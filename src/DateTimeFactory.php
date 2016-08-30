@@ -2,12 +2,11 @@
 
 namespace Damejidlo\DateTimeFactory;
 
-use Nette\Object;
-use Nette\Utils\DateTime;
+use DateTime;
 
 
 
-class DateTimeFactory extends Object
+class DateTimeFactory
 {
 
 	/**
