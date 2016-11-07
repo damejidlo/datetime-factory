@@ -4,8 +4,8 @@ namespace Damejidlo\DateTimeFactory\Tests;
 
 require_once __DIR__ . '/bootstrap.php';
 
-use Damejidlo\DateTimeFactory\DateTimeFactory;
-use DateTime;
+use Damejidlo\DateTimeFactory\DateTimeImmutableFactory;
+use DateTimeImmutable;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -14,16 +14,16 @@ use Tester\TestCase;
 /**
  * @testCase
  */
-class DateTimeFactoryTest extends TestCase
+class DateTimeImmutableTest extends TestCase
 {
 
 	public function testType()
 	{
-		$dateTimeFactory = new DateTimeFactory();
+		$dateTimeFactory = new DateTimeImmutableFactory();
 
 		$first = $dateTimeFactory->getNow();
 		$second = $dateTimeFactory->getNow();
-		Assert::type(DateTime::class, $first);
+		Assert::type(DateTimeImmutable::class, $first);
 		Assert::notSame($first, $second);
 	}
 
@@ -31,12 +31,12 @@ class DateTimeFactoryTest extends TestCase
 
 	public function testGetNow()
 	{
-		$dateTimeFactory = new DateTimeFactory();
+		$dateTimeFactory = new DateTimeImmutableFactory();
 
-		$before = new DateTime();
+		$before = new DateTimeImmutable();
 		$first = $dateTimeFactory->getNow();
 		Assert::true($before <= $first);
-		$after = new DateTime();
+		$after = new DateTimeImmutable();
 		Assert::true($first <= $after);
 		$second = $dateTimeFactory->getNow();
 		Assert::true($first <= $second);
@@ -46,4 +46,4 @@ class DateTimeFactoryTest extends TestCase
 
 
 
-(new DateTimeFactoryTest())->run();
+(new DateTimeImmutableTest())->run();
