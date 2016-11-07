@@ -5,7 +5,7 @@ namespace Damejidlo\DateTimeFactory\Tests;
 require_once __DIR__ . '/bootstrap.php';
 
 use Damejidlo\DateTimeFactory\DateTimeFactory;
-use Nette\Utils\DateTime;
+use DateTime;
 use Tester\Assert;
 use Tester\TestCase;
 
