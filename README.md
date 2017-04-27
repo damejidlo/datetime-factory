@@ -12,7 +12,7 @@ This ultra-simple library provides service you can easily use and mock.
 
 # Install
 ```
-composer install damejidlo/datetime-factory
+composer require damejidlo/datetime-factory
 ```
 
 And then just register it in your `config.neon` as a service.
