@@ -19,6 +19,7 @@ class DateTimeFactory
 
 
 	/**
+	 * @deprecated
 	 * @return DateTime
 	 */
 	public function getNow() : DateTime
