@@ -4,8 +4,15 @@ php:
   - 7.1
   - 7.2
 
-before_script:
-  - travis_retry composer install --no-interaction --prefer-dist
+env:
+    - COMPOSER_ARGS=""
+    - COMPOSER_ARGS="--prefer-stable"
+    - COMPOSER_ARGS="--prefer-stable --prefer-lowest"
+
+install:
+  - travis_retry composer update --no-interaction --prefer-dist $COMPOSER_ARGS
 
 script:
-  - ./vendor/bin/tester -p php -s -j 32 ./tests
+  - vendor/bin/tester -p php -s -j 32 tests
+  - vendor/bin/phpstan.phar analyse -l 7 -c tests/phpstan.neon src
+  - vendor/bin/phpcs --standard=vendor/damejidlo/coding-standard/DameJidloCodingStandard/ruleset.xml --ignore=tests/tmp/* --encoding=utf-8 src tests
