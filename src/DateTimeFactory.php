@@ -8,6 +8,9 @@ use Nette\Utils\DateTime;
 
 
 
+/**
+ * @deprecated
+ */
 class DateTimeFactory
 {
 
