@@ -3,12 +3,17 @@ declare(strict_types = 1);
 
 namespace Damejidlo\DateTimeFactory;
 
-use DateTime;
+use Nette\SmartObject;
+use Nette\Utils\DateTime;
 
 
 
 class DateTimeFactory
 {
+
+	use SmartObject;
+
+
 
 	/**
 	 * @return DateTime
