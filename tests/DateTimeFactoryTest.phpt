@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Damejidlo\DateTimeFactory\Tests;
 
@@ -17,7 +18,7 @@ use Tester\TestCase;
 class DateTimeFactoryTest extends TestCase
 {
 
-	public function testType()
+	public function testType() : void
 	{
 		$dateTimeFactory = new DateTimeFactory();
 
@@ -29,7 +30,7 @@ class DateTimeFactoryTest extends TestCase
 
 
 
-	public function testGetNow()
+	public function testGetNow() : void
 	{
 		$dateTimeFactory = new DateTimeFactory();
 

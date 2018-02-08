@@ -1,12 +1,11 @@
 language: php
 
 php:
-  - 5.6
-  - 7.0
+  - 7.1
+  - 7.2
 
 before_script:
-  - composer self-update || echo "[ERROR] update-composer failed!"
-  - composer install --no-interaction --optimize-autoloader
+  - travis_retry composer install --no-interaction --prefer-dist
 
 script:
   - ./vendor/bin/tester -p php -s -j 32 ./tests

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Damejidlo\DateTimeFactory;
 
@@ -12,7 +13,7 @@ class DateTimeFactory
 	/**
 	 * @return DateTime
 	 */
-	public function getNow()
+	public function getNow() : DateTime
 	{
 		return new DateTime();
 	}

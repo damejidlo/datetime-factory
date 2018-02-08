@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Damejidlo\DateTimeFactory;
 
@@ -12,7 +13,7 @@ class DateTimeImmutableFactory
 	/**
 	 * @return DateTimeImmutable
 	 */
-	public function getNow()
+	public function getNow() : DateTimeImmutable
 	{
 		return new DateTimeImmutable();
 	}
