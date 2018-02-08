@@ -19,17 +19,12 @@ And then just register it in your `config.neon` as a service.
 
 # Example (of mocking in tests)
 ```php
-trait MockDateTimeFactoryTrait
+public function testXyz(\DateTimeImmutable $subjectTime)
 {
-	/** @return Container */
-	abstract function getContainer();
-
-	private function mockDateTimeFactoryService(\DateTime $subjectTime)
-	{
-		$dateTimeFactory = Mockery::mock(DateTimeFactory::class);
-		$dateTimeFactory->shouldReceive('getNow')->andReturn($subjectTime);
-		$this->getContainer()->removeService('dateTimeFactory');
-		$this->getContainer()->addService('dateTimeFactory', $dateTimeFactory);
-	}
+    $container = $this->createContainer();
+    $dateTimeFactory = Mockery::mock(DateTimeFactoryImmutable::class);
+    $dateTimeFactory->shouldReceive('getNow')->andReturn($subjectTime);
+    $container->removeService('dateTimeFactory');
+    $container->addService('dateTimeFactory', $dateTimeFactory);
 }
 ```
