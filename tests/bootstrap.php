@@ -1,6 +1,7 @@
 <?php
+declare(strict_types = 1);
 
-namespace DamejidloTests\NewRelic;
+namespace Damejidlo\DateTimeFactory\Tests;
 
 require __DIR__ . '/../vendor/autoload.php';
 

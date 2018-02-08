@@ -4,10 +4,14 @@
 	"description": "",
 	"type": "library",
 	"require": {
-		"php": ">= 5.6.0"
+		"php": ">=7.1",
+		"nette/utils": "^2.4@dev || ^3.0@dev"
 	},
 	"require-dev": {
-		"nette/tester": "^1.6.1"
+		"damejidlo/coding-standard": "^0.7.0",
+		"nette/tester": "^2.0.0",
+		"phpstan/phpstan-shim": "^0.9",
+		"phpstan/phpstan-strict-rules": "^0.9"
 	},
 	"autoload": {
 		"psr-4": {

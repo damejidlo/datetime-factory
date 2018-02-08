@@ -1,11 +1,12 @@
 <?php
+declare(strict_types = 1);
 
 namespace Damejidlo\DateTimeFactory\Tests;
 
 require_once __DIR__ . '/bootstrap.php';
 
 use Damejidlo\DateTimeFactory\DateTimeFactory;
-use DateTime;
+use Nette\Utils\DateTime;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -17,7 +18,7 @@ use Tester\TestCase;
 class DateTimeFactoryTest extends TestCase
 {
 
-	public function testType()
+	public function testType() : void
 	{
 		$dateTimeFactory = new DateTimeFactory();
 
@@ -29,7 +30,7 @@ class DateTimeFactoryTest extends TestCase
 
 
 
-	public function testGetNow()
+	public function testGetNow() : void
 	{
 		$dateTimeFactory = new DateTimeFactory();
 
